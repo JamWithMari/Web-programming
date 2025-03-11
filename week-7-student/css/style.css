@@ -1,0 +1,58 @@
+body{margin: 0px;}
+.row{
+  margin: 0px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
+p,a,li{
+  font-size: 1.2em;
+  font-family: 'fira', sans-serif;
+}
+header > nav > a > img{
+  width: auto;
+  height: 90px;
+}
+.masthead,
+.view-masthead{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.masthead{
+  background-image: url("../img/masthead.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.view-masthead{
+  background-image: url("../img/sample-image.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.masthead div,
+.view-masthead div{
+  background-color: rgba(0,0,0,.7);
+  padding: 5%;
+  border-radius: 5px;
+}
+.masthead div h1,
+.view-masthead div h1{
+  font-family: 3.5em;
+  color: #fff;
+}
+.form-row, .image-row{
+  padding: 5%;
+}
+.image-row{
+  text-align: center;
+}
+footer{
+  background-color: #0e0e0e;
+  color: #fff;
+  padding: 5%;
+  text-align: center;
+}
