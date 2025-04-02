@@ -1,0 +1,200 @@
+
+
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  border: solid 3px;
+  border-radius: 15px;
+  padding: 7em 3em 10em;
+  box-shadow: 2px 2px 2px grey;
+  font-size: 1.25em;
+  
+}
+.error {
+  font-size: 3em;
+  color: red;
+  align-self: center;
+  justify-self: center;
+}
+
+form input {
+  font-size: 1.2em;
+  margin: 0.5em;
+  font-family: "Boldonse", system-ui;
+}
+
+
+form input:last-child{
+  width: 80%;
+  align-self: center;
+}
+
+
+
+header,
+header nav {
+  width: 100%;
+}
+.game-list{
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+}
+
+.item{
+width: 80%;
+padding-top: 1em;
+height: min-content;
+border-top: 1px solid blue;
+border-bottom: 1px solid red;
+
+}
+/* putting price rating and add to cart in 1 line  */
+.extras{
+font-size: 1.3em;
+display: flex;
+justify-content: space-around;
+}
+
+.item img{
+width: 100%;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Boldonse", system-ui;
+}
+
+header {
+  position: sticky;
+  background-color: #2A384B;
+  margin: 0;
+  margin-bottom: 10em;
+  padding: 0;
+}
+
+header nav menu {
+  display: flex;
+  list-style: none;
+  padding: 0.5em;
+  margin-left: 1em;
+  /* I ended up putting in the values wrong so i just did the comon sense thing of  */
+  flex-flow: row-reverse;
+  justify-content: start;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #0e0e0e;
+
+}
+
+menu li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  margin-right: 2em;
+}
+
+a:hover {
+  color: teal;
+}
+
+
+@media screen and (min-width: 500px) {
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .game-list{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    row-gap: 2em;
+    width: 100vw;
+  }
+  .item{
+    overflow: hidden;
+    box-shadow: 2px 2px 2px;
+    border: solid black 2px;
+    border-radius: 0.5em;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.5s ease-in-out;
+    padding-top: 0;
+    height: 100%;
+    
+  
+  }
+
+  .item:hover{
+    transform: scale(1.05);
+  }
+  .details{
+    padding: 0 0.5em;
+    text-align:center;
+  }
+  .item img{
+    width: 100%;
+  }
+
+  .extras{
+    width: 100%;
+    display: flex;
+    height: min-content;
+    align-items: center;
+    flex-direction: column;
+    align-self: flex-end;
+    border: solid 2px blue;
+    
+  }
+
+}
+
+.regsiter{
+  padding: 3em;
+}
+/* the button in the register.php page */
+.regsiter input:last-of-type{
+  background-color: white;
+  border: solid 2px blue;
+  border-radius: 3em;
+  font-size: 1.5em;
+  padding: 0.3em 0;
+  width: 50%;
+  transition: 0.25s ease-in;
+  
+}
+.register-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.regsiter input:last-of-type:hover{
+color: white;
+background-color: blue;
+}
+.regsiter label{
+  margin-left: 1em;
+}
