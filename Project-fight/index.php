@@ -6,8 +6,9 @@
         ?>
         
         <main>
-            <section class="carousel">
-                
+            <section class="mast-head">
+                <h2>Project fight</h2>
+                <h3>The game store for the FGC</h3>
             </section>
 
             <section class="game-list">
@@ -36,7 +37,4 @@
                 ?>
             </section>
         </main>
-        
-        
-    </body>
-    </html>
+    <?php include'./includes/footer.php'?>

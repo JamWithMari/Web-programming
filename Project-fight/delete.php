@@ -24,4 +24,5 @@ if(isset($_GET['user_id']) && !empty($_GET['user_id'])){
     die();
 
 }
+include'./includes/footer.php';
 ?>

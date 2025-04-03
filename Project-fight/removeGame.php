@@ -18,8 +18,7 @@ if(isset($_GET['game_id']) && !empty($_GET['game_id'])){
         $sql = "DELETE FROM shoppingCart WHERE game_id =$deleteGame AND user_id =$userID";
         $success = $conn->query($sql);
         if($success){
-            echo"<h2 class='success'>game removed from cart</h2>";
-            echo'<a href="shoppingCart.php">View Cart</a>';
+            header('Location: shoppingCart.php');
         }
 
     }catch(PDOException $e){

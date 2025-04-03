@@ -1,6 +1,7 @@
 <?php
     $title = 'Admin Updating users';
     require_once('./includes/database.php');
+    include './includes/header.php';
     //establishing a variable to store user data
     $userData;
     if(isset($_GET['user_id']) && !empty($_GET['user_id'])){
@@ -58,20 +59,21 @@
     <title>Project Fight |</title>
 </head>
 <body>
-    <form action="edit.php?user_id=<?php echo $userData['user_id']?>" method="POST">
-        <input type="hidden" name="user_id" value="<?php echo$userData['user_id']?>">
-        <label for="fName">First Name</label>
-        <input type="text" name="fName" class="fName" value="<?php echo$userData['first_name']?>">
+    <main class="edit-main">
+        <form action="edit.php?user_id=<?php echo $userData['user_id']?>" method="POST">
+            <input type="hidden" name="user_id" value="<?php echo$userData['user_id']?>">
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" class="fName" value="<?php echo$userData['first_name']?>">
 
-        <label for="lName">Last Name</label>
-        <input type="text" name="lName" class="lName" value="<?php
-        echo$userData['last_name']?>">
+            <label for="lName">Last Name</label>
+            <input type="text" name="lName" class="lName" value="<?php
+            echo$userData['last_name']?>">
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php
-        echo$userData['email']?>">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<?php
+            echo$userData['email']?>">
 
-        <input type="submit" name="Update" value="Update User">
-    </form>
-</body>
-</html>
+            <input type="submit" name="Update" value="Update User">
+        </form>
+    </main>
+<?php include'./includes/footer.php'?>

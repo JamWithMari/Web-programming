@@ -14,7 +14,6 @@ if(isset($_GET['game_id']) && is_numeric($_GET['game_id'])){
     $userID = $_SESSION['user_id'];
 
     //now we going to try catch the sql statement to
-    echo "<p>DEBUG: User ID = $userID, Game ID = $gameID</p>";
     try{
         $sql = "SELECT * FROM shoppingCart WHERE user_id = $userID AND game_id= $gameID";
         $result = $conn->query($sql);
@@ -27,14 +26,14 @@ if(isset($_GET['game_id']) && is_numeric($_GET['game_id'])){
         }else{
             $sql = "INSERT INTO shoppingCart (user_id, game_id) VALUES ($userID, $gameID)";
             $inserted = $conn->query($sql);
-            //print a message saying that the item has been added to cart
-            echo'<p class="success">Game added to cart!<a href="shoppingCart.php">View Cart</a></p>';
+            header("Location: shoppingCart.php");
         }
     }catch(PDOException $e){
-        echo "<p> SQL Error: " . $e->getMessage() . "</p>";
+        echo "<p class='error'> SQL Error: " . $e->getMessage() . "</p>";
     }
 
 }else{
     echo"Invalid game ID";
 }
+
 ?>

@@ -70,5 +70,5 @@
         //we just going to have a redirect to register.php because the form wasn't submitted
         header('Location: register.php');
     }
-        
+    include'./includes/footer.php';
 ?>

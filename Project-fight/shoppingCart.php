@@ -27,21 +27,22 @@ try{
 }
 ?>
 
+    <main class="cart">
+    <?php 
 
-        <?php 
-
-            if(count($gamesInCart) > 0){
-                foreach($gamesInCart as $cartGame){
+        if(count($gamesInCart) > 0){
+            foreach($gamesInCart as $cartGame){
+                echo"<div class='cart-item'>";
                     echo "<img src='{$cartGame['image']}' alt='{$cartGame['name']} game art'>";
                     echo "<h3> {$cartGame['name']}</h3>";
                     echo "<p> {$cartGame['price']}</p>";
                     //The link for adding the game to cart
                     echo"<p><a href='removeGame.php?game_id={$cartGame['game_id']}'>Remove</a></p>";
-                }
-            }else{
-                echo '<p class ="error">Your cart is empty</p>';
+                echo"</div>";
             }
-        ?>
-    </div>
-</body>
-</html>
+        }else{
+            echo '<p class ="error">Your cart is empty</p>';
+        }
+        ?> 
+    </main>
+    <?php include'./includes/footer.php'?>

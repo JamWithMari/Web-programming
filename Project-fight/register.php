@@ -4,7 +4,7 @@ include './includes/header.php';
 ?>
     <main class="register-main">
         <h2>New user registartion</h2>
-        <form action="createUser.php" method="POST" class="regsiter">
+        <form action="createUser.php" method="POST" class="register">
             <label for="fName">First Name</label>
             <input type="text" name="fName" id="fName">
 
@@ -24,5 +24,4 @@ include './includes/header.php';
             <input type="submit" name="submit" value="Submit">
         </form>
     </main>
-</body>
-</html>
+    <?php include'./includes/footer.php'?>

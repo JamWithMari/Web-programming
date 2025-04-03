@@ -1,200 +1,496 @@
-
-
-
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-form{
-  display: flex;
-  flex-direction: column;
-  border: solid 3px;
-  border-radius: 15px;
-  padding: 7em 3em 10em;
-  box-shadow: 2px 2px 2px grey;
-  font-size: 1.25em;
-  
-}
-.error {
-  font-size: 3em;
-  color: red;
-  align-self: center;
-  justify-self: center;
-}
-
-form input {
-  font-size: 1.2em;
-  margin: 0.5em;
-  font-family: "Boldonse", system-ui;
-}
-
-
-form input:last-child{
-  width: 80%;
-  align-self: center;
-}
-
-
-
+/* main colour #8d0dca 
+secondary colour*/
+/* header styling #4ACA0D
+#CA8D0D*/
 header,
 header nav {
   width: 100%;
 }
-.game-list{
-display: flex;
-flex-direction: column;
-width: 100%;
-align-items: center;
+
+/* styling for home icon */
+#home {
+  /* making the home icon be in line with the rest of the content be chaning the height */
+  height: 1.5em;
 }
 
-.item{
-width: 80%;
-padding-top: 1em;
-height: min-content;
-border-top: 1px solid blue;
-border-bottom: 1px solid red;
-
-}
-/* putting price rating and add to cart in 1 line  */
-.extras{
-font-size: 1.3em;
-display: flex;
-justify-content: space-around;
-}
-
-.item img{
-width: 100%;
-}
-
-body {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Boldonse", system-ui;
+#cart-icon {
+  height: 1.5em;
 }
 
 header {
+  /* Making the header attached to the toop of the page at all times */
   position: sticky;
-  background-color: #2A384B;
+  top: 0;
+  /* a high as possible z index just so it doesn't interfere with anything */
+  z-index: 1000;
+  background-color: #CA8D0D;
   margin: 0;
-  margin-bottom: 10em;
-  padding: 0;
+  padding: 0.5em 0;
+  /* a box shadow to add some depth to the page and show visually that the main content rested beneath the header */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Jersey 15", sans-serif;
 }
 
 header nav menu {
   display: flex;
   list-style: none;
-  padding: 0.5em;
   margin-left: 1em;
-  /* I ended up putting in the values wrong so i just did the comon sense thing of  */
-  flex-flow: row-reverse;
+  flex-flow: row;
   justify-content: start;
+  padding: 0;
+  margin: 0;
+  padding-left: 2.7em;
+  font-size: 1.2em;
+  align-items: center;
 }
 
 a {
   text-decoration: underline;
   font-weight: bolder;
-  color: #0e0e0e;
-
 }
 
 menu li a {
   color: #f4f4f4;
   text-decoration: none;
   margin-right: 2em;
+  font-size: 1.3em;
 }
 
 a:hover {
-  color: teal;
+  color: #008080;
 }
 
 
-@media screen and (min-width: 500px) {
-body{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 
-  }
-  
-  .game-list{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-items: center;
-    row-gap: 2em;
-    width: 100vw;
-  }
-  .item{
-    overflow: hidden;
-    box-shadow: 2px 2px 2px;
-    border: solid black 2px;
-    border-radius: 0.5em;
-    display: flex;
-    width: 80%;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-    transition: 0.5s ease-in-out;
-    padding-top: 0;
-    height: 100%;
-    
-  
-  }
-
-  .item:hover{
-    transform: scale(1.05);
-  }
-  .details{
-    padding: 0 0.5em;
-    text-align:center;
-  }
-  .item img{
-    width: 100%;
-  }
-
-  .extras{
-    width: 100%;
-    display: flex;
-    height: min-content;
-    align-items: center;
-    flex-direction: column;
-    align-self: flex-end;
-    border: solid 2px blue;
-    
-  }
-
+/* styling for individual game listings */
+.item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px #373737;
+  border: solid black 2px;
+  border-radius: 0.5em;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  justify-content: space-between;
+  max-width: 500px;
+  background-color: #f4f4f4;
+}
+.mast-head{
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  height: 50vh;
+  width: 100%;
+  background-image: url('../images/mast-head-img.jpg');
+  background-position: fixed;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  color: #f4f4f4;
+  text-shadow: 3px 3px 3px #0e0e0e;
+  margin-bottom: 3em;
+  position: absolute;
+  top: 6.8%;
 }
 
-.regsiter{
-  padding: 3em;
+.mast-head >*{
+  margin: 0.25em;
 }
+
+/* styling for all error messages */
+.error {
+  font-size: 3em;
+  color: #FF0000;
+  align-self: center;
+  justify-self: center;
+}
+
+/* small styling to the forms */
+form input {
+  font-size: 1.2em;
+  margin: 0.5em;
+}
+
+/* targeting the last child (the button) of each form */
+form input:last-child {
+  width: 80%;
+  align-self: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+  height: 100%;
+  background-color: #b075cb;
+}
+
+/* Styling for the homepage and putting price rating and add to cart in 1 line */
+.extras {
+  font-size: 1.3em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.extras a {
+  text-decoration: none;
+  border: solid 2px blue;
+  background-color: green;
+  color: white;
+  padding: 0.5em;
+  border-radius: 1em;
+  transition: 0.s ease-in-out;
+}
+
+.extras a:hover {
+  background-color: #0DCA8D;
+}
+
+
+
+
+
+.game-list {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  row-gap: 2em;
+  width: 100vw;
+  color: #0e0e0e;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.details {
+  padding: 0 0.5em;
+  text-align: center;
+}
+
+.item img {
+  border-bottom: solid 2px #0e0e0e;
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+
+.extras {
+  width: 100%;
+  display: flex;
+  height: min-content;
+  align-items: center;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+main {
+  padding-top: 70vh;
+}
+
+
+/* Registration page styling */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  border: solid 2px #0e0e0e;
+  border-radius: 0.7em;
+  padding: 1em 2em;
+  width: 70%;
+  max-width: 400px;
+  background-color: #CA8D0D;
+  color: #f4f4f4;
+}
+
 /* the button in the register.php page */
-.regsiter input:last-of-type{
-  background-color: white;
+.register input:last-of-type {
+  background-color: #0f8e66;
+  color: #FFFFFF;
   border: solid 2px blue;
   border-radius: 3em;
   font-size: 1.5em;
   padding: 0.3em 0;
-  width: 50%;
-  transition: 0.25s ease-in;
-  
+  width: 5em;
+  font-family: "Kanit", sans-serif;
+  transition: 0.2s ease-in;
 }
-.register-main{
+
+
+
+.register-main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5em;
+
 }
-.regsiter input:last-of-type:hover{
-color: white;
-background-color: blue;
+
+.register input:last-of-type:hover {
+  background-color: #0DCA8D;
 }
-.regsiter label{
-  margin-left: 1em;
+
+.register label {
+  font-size: 1.2em;
+  align-items: center;
+
+}
+
+/* Shopping cart page styling */
+
+.cart {
+  max-width: 800px;
+  width: 100%;
+  margin: 1.5em auto;
+  padding: 1.5em;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cart img {
+  max-width: 200px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart h3 {
+  color: #333;
+  margin-top: 0.7em;
+}
+
+.cart p {
+  font-size: 1em;
+  color: #666;
+}
+
+.cart a {
+  text-decoration: none;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.cart a:hover {
+  color: #c9302c;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Login form styling */
+#login-head {
+  text-align: center;
+}
+
+.login-main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+
+}
+
+.login {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  border: solid 2px #0e0e0e;
+  border-radius: 0.7em;
+  padding: 2em 2em;
+  height: 40vh;
+  min-height: 300px;
+  width: 70%;
+  max-width: 400px;
+  background-color: #CA8D0D;
+  color: #f4f4f4;
+}
+
+.login input:last-of-type {
+  background-color: #0f8e66;
+  color: #FFFFFF;
+  border: solid 2px blue;
+  border-radius: 3em;
+  font-size: 1.5em;
+  padding: 0.3em 0;
+  width: 5em;
+  font-family: "Kanit", sans-serif;
+  transition: 0.2s ease-in;
+}
+
+.login input:last-of-type:hover {
+  background-color: #0DCA8D;
+}
+
+.login label {
+  font-size: 1.2em;
+  align-items: center;
+}
+
+
+/* Admin Page Styling */
+.admin-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table thead {
+  background: #8d0dca;
+  color: white;
+  text-align: left;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-table tr:first-child:hover{
+  background-color: initial;
+}
+
+
+.admin-table a {
+  text-decoration: none;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.admin-table a:hover {
+  color: #e4b9b8;
+}
+
+.edit-main{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.edit-main form{
+  color: #f4f4f4;
+  background-color: #8d0dca;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: auto;
+  padding: 2em 3em;
+  font-size: 1.2em;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 1em;
+}
+
+
+footer{
+  text-align: center;
+}
+
+
+/* Media query for phones */
+@media screen and (max-width: 600px) {
+  body {
+    color: #f4f4f4;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .game-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .item {
+    width: 80%;
+    height: min-content;
+  }
+
+  /* Disable hover effect for .item */
+  .item:hover {
+    transform: none;
+  }
+
+  /* putting price rating and add to cart in 1 line */
+  .extras {
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .item img {
+    align-self: flex-start;
+  }
+
+  header nav menu {
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .register-main {
+    padding-top: 3em;
+  }
+
+  .register-main h2 {
+    font-size: 2em;
+  }
+
+  .register {
+    padding: 1em;
+  }
+}
+
+/* Media query to allow 3 gamse per row */
+@media screen and (min-width: 900px) {
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 1em;
+    width: 100vw;
+  }
+
+  .item {
+    height: 100%;
+  }
+}
+
+/* media query to allow 4 games per row */
+@media screen and (min-width: 1200px) {
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Add another column */
+    justify-items: center;
+    row-gap: 1em;
+    width: 100vw;
+  }
+
+  .item {
+    height: 100%;
+  }
 }
